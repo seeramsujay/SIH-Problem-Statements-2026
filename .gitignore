@@ -1,0 +1,19 @@
+# Python virtual environments & bytecode
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# UV / Dependency lock files
+uv.lock
+
+# Archives & Temporary files
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# OS metadata
+.DS_Store
+Thumbs.db
