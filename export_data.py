@@ -1,11 +1,13 @@
 import html
 import json
 import re
-from bs4 import BeautifulSoup
+
 import pandas as pd
+from bs4 import BeautifulSoup
 
 ILLEGAL_CHARACTERS_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")
 URL_PATTERN = re.compile(r"https?://[^\s<>\"\'\)]+")
+
 
 def clean_cell_value(cell):
     """Clean and format cell content, parsing embedded HTML, decoding entities, and stripping illegal chars."""
@@ -34,6 +36,7 @@ def clean_cell_value(cell):
 
     lines = [re.sub(r"[ \t]+", " ", line).strip() for line in text.split("\n")]
     return "\n".join(line for line in lines if line).strip()
+
 
 def main():
     html_file = "website.html"
@@ -79,7 +82,8 @@ def main():
                             h = a.get("href", "").strip()
                             if (
                                 h
-                                and h not in [
+                                and h
+                                not in [
                                     "#",
                                     "javascript:void(0);",
                                     "https://www.sih.gov.in/dataset/",
@@ -132,7 +136,11 @@ def main():
             if (
                 clean_u not in dataset_urls
                 and not clean_u.rstrip("/").endswith("/dataset")
-                and clean_u not in ["https://www.sih.gov.in/dataset/", "http://www.sih.gov.in/dataset/"]
+                and clean_u
+                not in [
+                    "https://www.sih.gov.in/dataset/",
+                    "http://www.sih.gov.in/dataset/",
+                ]
             ):
                 dataset_urls.append(clean_u)
 
@@ -187,6 +195,7 @@ def main():
     excel_path = "sih_problem_statements.xlsx"
     df.to_excel(excel_path, index=False)
     print(f"Saved Excel to {excel_path}")
+
 
 if __name__ == "__main__":
     main()
