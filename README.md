@@ -1,4 +1,21 @@
-# Smart India Hackathon (SIH) 2026 - Problem Statements Dataset
+<div align="center">
+
+<img src="assets/logo.svg" alt="SIH 2026 Dataset Logo" width="160" />
+
+# Smart India Hackathon (SIH) 2026
+### Problem Statements Dataset & Automated Extraction Engine
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Dataset: 226 Problems](https://img.shields.io/badge/Dataset-226%20Problem%20Statements-orange.svg)](#)
+[![Formats: JSON | CSV | XLSX](https://img.shields.io/badge/Formats-JSON%20%7C%20CSV%20%7C%20XLSX-success.svg)](#)
+
+<p align="center">
+  <b>Comprehensive structured database, schema definitions, and automated parser of all 226 problem statements released for the Smart India Hackathon 2026.</b>
+</p>
+
+</div>
+
+---
 
 A structured and cleaned dataset of all **226 problem statements** released for the **Smart India Hackathon (SIH) 2026**.
 
